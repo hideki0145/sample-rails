@@ -37,4 +37,5 @@ yarn-debug.log*
 /sig/auto_completion
 /sig/rbs_rails
 /spec/support/uploads
+/vendor/bundle
 erd.pdf
