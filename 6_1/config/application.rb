@@ -48,5 +48,7 @@ module Sampleapp
     end
 
     config.time_zone = 'Asia/Tokyo'
+
+    config.action_dispatch.rescue_responses['ApplicationController::Forbidden'] = :not_found
   end
 end
