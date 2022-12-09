@@ -38,4 +38,5 @@ yarn-debug.log*
 /sig/rbs_rails
 /spec/support/uploads
 /vendor/bundle
+/config/database.yml
 erd.pdf
