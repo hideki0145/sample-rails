@@ -1,0 +1,5 @@
+---
+:run_all_checks: true
+:min_confidence: 2
+:skip_checks:
+- CheckUnscopedFind

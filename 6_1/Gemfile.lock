@@ -69,6 +69,7 @@ GEM
     bindex (0.8.1)
     bootsnap (1.15.0)
       msgpack (~> 1.2)
+    brakeman (5.4.0)
     builder (3.2.4)
     byebug (11.1.3)
     capybara (3.38.0)
@@ -280,6 +281,7 @@ PLATFORMS
 DEPENDENCIES
   annotate
   bootsnap (>= 1.4.4)
+  brakeman
   byebug
   capybara
   factory_bot_rails

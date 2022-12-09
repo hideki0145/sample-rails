@@ -47,6 +47,7 @@ group :development do
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
   gem 'annotate'
+  gem 'brakeman'
 end
 
 group :test do
