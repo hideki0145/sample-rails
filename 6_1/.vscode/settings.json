@@ -1,0 +1,50 @@
+{
+  // ******************************
+  // Common settings
+  // ******************************
+  "files.autoGuessEncoding": false,
+  "files.encoding": "utf8",
+  // ******************************
+  // Language settings
+  // ******************************
+  "[css]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+  "[html]": {
+    "editor.tabSize": 2,
+  },
+  "[javascript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+  "[ruby]": {
+    "editor.tabSize": 2,
+    "editor.rulers": [120],
+    "editor.defaultFormatter": "rebornix.ruby",
+    "editor.formatOnSave": true,
+  },
+  "[scss]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+  "[typescript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+  // ******************************
+  // Extensions settings
+  // ******************************
+  // Ruby
+  "ruby.format": "rubocop",
+  "ruby.lint": {
+    "rubocop": {
+      "useBundler": true,
+      "forceExclusion": true,
+    },
+  },
+}

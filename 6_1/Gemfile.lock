@@ -89,6 +89,9 @@ GEM
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     csv (3.2.6)
+    debase (0.2.5.beta2)
+      debase-ruby_core_source (>= 0.10.12)
+    debase-ruby_core_source (0.10.18)
     diff-lcs (1.5.0)
     docile (1.4.0)
     erubi (1.11.0)
@@ -251,6 +254,8 @@ GEM
       rubocop (>= 1.33.0, < 2.0)
     rubocop-rspec (2.15.0)
       rubocop (~> 1.33)
+    ruby-debug-ide (0.7.3)
+      rake (>= 0.8.1)
     ruby-graphviz (1.2.5)
       rexml
     ruby-progressbar (1.11.0)
@@ -334,6 +339,7 @@ DEPENDENCIES
   bullet
   byebug
   capybara
+  debase (>= 0.2.5.beta2)
   factory_bot_rails
   faker
   gimei
@@ -353,6 +359,7 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rails
   rubocop-rspec
+  ruby-debug-ide
   simplecov
   spring
   spring-commands-rspec
