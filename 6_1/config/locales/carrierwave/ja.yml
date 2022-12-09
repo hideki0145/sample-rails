@@ -1,0 +1,4 @@
+ja:
+  errors:
+    messages:
+      extension_whitelist_error: 'に%{extension}ファイルのアップロードは許可されていません。アップロードできるファイルタイプ: %{allowed_types}'
