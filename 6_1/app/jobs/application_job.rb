@@ -4,4 +4,6 @@ class ApplicationJob < ActiveJob::Base
 
   # Most jobs are safe to ignore if the underlying records are no longer available
   # discard_on ActiveJob::DeserializationError
+
+  rescue_from(ActiveJob::DeserializationError) { |e| LogUtility.error_log(e) }
 end
