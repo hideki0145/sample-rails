@@ -78,6 +78,10 @@ gems:
     revision: 3cdcbea7f7a2a2ba5dffce3ee71f938f8b301687
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
+- name: csv
+  version: '0'
+  source:
+    type: stdlib
 - name: faker
   version: '2.23'
   source:
@@ -86,6 +90,10 @@ gems:
     revision: 3cdcbea7f7a2a2ba5dffce3ee71f938f8b301687
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
+- name: fileutils
+  version: '0'
+  source:
+    type: stdlib
 - name: i18n
   version: '1.10'
   source:
@@ -106,6 +114,10 @@ gems:
     revision: 3cdcbea7f7a2a2ba5dffce3ee71f938f8b301687
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
+- name: logger
+  version: '0'
+  source:
+    type: stdlib
 - name: mail
   version: '2.8'
   source:
@@ -170,6 +182,14 @@ gems:
   version: 0.11.0
   source:
     type: rubygems
+- name: securerandom
+  version: '0'
+  source:
+    type: stdlib
+- name: strscan
+  version: '0'
+  source:
+    type: stdlib
 - name: timeout
   version: '0'
   source:
@@ -179,10 +199,6 @@ gems:
   source:
     type: stdlib
 - name: date
-  version: '0'
-  source:
-    type: stdlib
-- name: logger
   version: '0'
   source:
     type: stdlib
@@ -211,6 +227,10 @@ gems:
   source:
     type: stdlib
 - name: pathname
+  version: '0'
+  source:
+    type: stdlib
+- name: forwardable
   version: '0'
   source:
     type: stdlib
