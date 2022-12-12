@@ -6,6 +6,9 @@
     "@rails/webpacker": "^5",
     "ts-loader": "^8",
     "typescript": "*",
+    "vue": "^2",
+    "vue-loader": "^15",
+    "vue-template-compiler": "*",
     "webpack": "^4",
     "webpack-cli": "^3"
   },
