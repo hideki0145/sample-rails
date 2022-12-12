@@ -119,6 +119,8 @@ GEM
     glob (0.4.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    hanmoto (0.6.0)
+      rails (>= 6.0.5)
     htmlbeautifier (1.4.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
@@ -391,6 +393,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   gimei
+  hanmoto
   htmlbeautifier
   i18n-js
   jbuilder (~> 2.7)

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+  <head>
+    <meta charset="UTF-8">
+    <title><%= yield :title %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="noindex">
+
+    <%= stylesheet_packs_with_chunks_tag 'application', media: 'all' %>
+    <%= javascript_packs_with_chunks_tag 'application' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

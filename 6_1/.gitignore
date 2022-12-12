@@ -41,4 +41,8 @@ yarn-debug.log*
 !/uploads/.keep
 /vendor/bundle
 /config/database.yml
+/public/404.html
+/public/422.html
+/public/500.html
+/public/503.html
 erd.pdf
