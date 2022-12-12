@@ -45,6 +45,7 @@ gem 'sidekiq', '~> 6'
 gem 'ransack'
 gem 'sisimai'
 gem 'carrierwave'
+gem 'whenever', require: false
 
 group :development do
   gem 'spring-commands-rspec'
