@@ -8,11 +8,12 @@
     <%= csp_meta_tag %>
     <meta name="robots" content="noindex">
 
-    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= stylesheet_pack_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
+    <%= yield :javascript %>
   </head>
 
-  <body>
+  <body class="<%= controller_path.gsub('/', ' ') %>">
     <%= yield %>
   </body>
 </html>
