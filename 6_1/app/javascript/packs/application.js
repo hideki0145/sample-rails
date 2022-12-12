@@ -15,3 +15,5 @@ const images = require.context('../images', true)
 const imagePath = (name) => images(name, true)
 
 require("../stylesheets/application");
+require("../packs/i18n.js.erb");
+require("../packs/common");

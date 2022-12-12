@@ -10,6 +10,9 @@ config.resolve.alias = {
   vue$: "vue/dist/vue.esm.js",
 };
 
+const erb = require("./loaders/erb");
+environment.loaders.prepend("erb", erb);
+
 const typescript = require("./loaders/typescript");
 environment.loaders.prepend("typescript", typescript);
 
