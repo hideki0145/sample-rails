@@ -15,3 +15,7 @@ ja:
     503:
       title: '503 Service Unavailable'
       description: 'ただいまアクセスしづらくなっております'
+    maintenance:
+      title: 'ただいまメンテナンス中です'
+      description1: 'ご不便をおかけしております'
+      description2: '今しばらくお待ちください'

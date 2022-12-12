@@ -45,4 +45,6 @@ yarn-debug.log*
 /public/422.html
 /public/500.html
 /public/503.html
+/public/maintenance
+/public/maintenance.html
 erd.pdf
