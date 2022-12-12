@@ -7,4 +7,7 @@ config.performance = {
   maxEntrypointSize: 20971520,
 };
 
+const typescript = require("./loaders/typescript");
+environment.loaders.prepend("typescript", typescript);
+
 module.exports = environment
