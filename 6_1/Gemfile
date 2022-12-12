@@ -39,6 +39,7 @@ end
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'rails-i18n', '~> 6.0.0'
+gem 'kaminari'
 # As of 2022/12/10, an error occurs when sidekiq is executed if 7.0.0 or higher is used.
 gem 'sidekiq', '~> 6'
 gem 'carrierwave'

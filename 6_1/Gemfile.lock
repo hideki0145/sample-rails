@@ -127,6 +127,18 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     json (2.6.2)
+    kaminari (1.2.2)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.2)
+      kaminari-activerecord (= 1.2.2)
+      kaminari-core (= 1.2.2)
+    kaminari-actionview (1.2.2)
+      actionview
+      kaminari-core (= 1.2.2)
+    kaminari-activerecord (1.2.2)
+      activerecord
+      kaminari-core (= 1.2.2)
+    kaminari-core (1.2.2)
     language_server-protocol (3.17.0.2)
     launchy (2.5.0)
       addressable (~> 2.7)
@@ -367,6 +379,7 @@ DEPENDENCIES
   gimei
   htmlbeautifier
   jbuilder (~> 2.7)
+  kaminari
   letter_opener_web
   listen (~> 3.3)
   pg (~> 1.1)
