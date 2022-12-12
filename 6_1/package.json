@@ -8,12 +8,14 @@
     "typescript": "*",
     "vue": "^2",
     "vue-loader": "^15",
+    "vue-select": "*",
     "vue-template-compiler": "*",
     "webpack": "^4",
     "webpack-cli": "^3"
   },
   "version": "0.1.0",
   "devDependencies": {
+    "@types/vue-select": "*",
     "webpack-dev-server": "^3"
   },
   "engines": {
