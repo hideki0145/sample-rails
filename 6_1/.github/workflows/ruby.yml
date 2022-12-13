@@ -1,0 +1,181 @@
+name: Ruby
+
+on:
+  pull_request:
+    paths-ignore:
+      - '.vscode/**'
+      - 'doc/**'
+      - '**.md'
+
+jobs:
+  rspec:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    services:
+      redis:
+        # https://docs.github.com/ja/actions/guides/creating-redis-service-containers
+        image: redis
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      BUNDLE_WITHOUT: development
+    steps:
+      - uses: actions/checkout@v3
+      - name: Get Ruby version
+        id: ruby
+        run: echo "version=$(cat .tool-versions | grep -Po 'ruby \K[\d.]+')" >> $GITHUB_OUTPUT
+      - name: Get Node.js version
+        id: nodejs
+        run: echo "version=$(cat .tool-versions | grep -Po 'nodejs \K[\d.]+')" >> $GITHUB_OUTPUT
+      - name: Build and Run PostgreSQL container
+        run: |
+          docker build -t postgresql_i .github/workflows/postgres
+          docker run -d --name postgresql_t -p 5432:5432 -e POSTGRES_USER=sampleapp -e POSTGRES_PASSWORD=postgres -e LC_ALL=ja_JP.UTF-8 postgresql_i
+      - name: Wait for PostgreSQL
+        run: |
+          for i in {1..5}
+          do
+            sleep 5
+            docker exec postgresql_t pg_isready -U postgres && break
+          done
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ steps.ruby.outputs.version }}
+          bundler-cache: true
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ steps.nodejs.outputs.version }}
+      - name: Cache node modules
+        # https://docs.github.com/ja/actions/guides/caching-dependencies-to-speed-up-workflows
+        # https://docs.github.com/ja/actions/guides/building-and-testing-nodejs
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+            ${{ runner.os }}-
+      - name: Install dependencies
+        run: yarn install --check-files
+      - name: Copying configuration files
+        run: cp config/database.yml.ci config/database.yml
+      - name: Preparing database
+        run: RAILS_ENV=test bin/rails db:test:prepare
+      - name: Run RSpec
+        run: RUBYOPT='-W:deprecated' bin/rspec
+        env:
+          TZ: Asia/Tokyo
+      - name: Archive code coverage results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: code-coverage-report
+          path: coverage
+      - name: Archive screenshot results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: screenshots
+          path: tmp/screenshots
+          if-no-files-found: ignore
+
+  rubocop:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Get Ruby version
+        id: ruby
+        run: echo "version=$(cat .tool-versions | grep -Po 'ruby \K[\d.]+')" >> $GITHUB_OUTPUT
+      - name: Get RuboCop version
+        id: rubocop
+        run: echo "version=$(cat Gemfile.lock | grep -Po '    rubocop \(\K[\d.]+')" >> $GITHUB_OUTPUT
+      - name: Get RuboCop Performance version
+        id: rubocop-performance
+        run: echo "version=$(cat Gemfile.lock | grep -Po '    rubocop-performance \(\K[\d.]+')" >> $GITHUB_OUTPUT
+      - name: Get RuboCop Rails version
+        id: rubocop-rails
+        run: echo "version=$(cat Gemfile.lock | grep -Po '    rubocop-rails \(\K[\d.]+')" >> $GITHUB_OUTPUT
+      - name: Get RuboCop RSpec version
+        id: rubocop-rspec
+        run: echo "version=$(cat Gemfile.lock | grep -Po '    rubocop-rspec \(\K[\d.]+')" >> $GITHUB_OUTPUT
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ steps.ruby.outputs.version }}
+      - name: Run RuboCop
+        run: |
+          gem install rubocop -v ${{ steps.rubocop.outputs.version }}
+          gem install rubocop-performance -v ${{ steps.rubocop-performance.outputs.version }}
+          gem install rubocop-rails -v ${{ steps.rubocop-rails.outputs.version }}
+          gem install rubocop-rspec -v ${{ steps.rubocop-rspec.outputs.version }}
+          rubocop
+
+  brakeman:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Get Ruby version
+        id: ruby
+        run: echo "version=$(cat .tool-versions | grep -Po 'ruby \K[\d.]+')" >> $GITHUB_OUTPUT
+      - name: Get Brakeman version
+        id: brakeman
+        run: echo "version=$(cat Gemfile.lock | grep -Po '    brakeman \(\K[\d.]+')" >> $GITHUB_OUTPUT
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ steps.ruby.outputs.version }}
+      - name: Run Brakeman
+        run: |
+          gem install brakeman -v ${{ steps.brakeman.outputs.version }}
+          brakeman
+
+  success_processing:
+    if: success()
+    needs: [rspec, rubocop, brakeman]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Slack notify success
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_MESSAGE: ':white_check_mark: GitHub Actions Success'
+          SLACK_COLOR: good
+
+  failure_processing:
+    if: failure()
+    needs: [rspec, rubocop, brakeman]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Slack notify failure
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_MESSAGE: ':no_entry: GitHub Actions Failure'
+          SLACK_COLOR: danger
+
+  cancelled_processing:
+    if: cancelled()
+    needs: [rspec, rubocop, brakeman]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Slack notify cancelled
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_MESSAGE: ':warning: GitHub Actions Cancelled'
+          SLACK_COLOR: '#808080'
