@@ -78,7 +78,19 @@ gems:
     revision: 3cdcbea7f7a2a2ba5dffce3ee71f938f8b301687
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
+- name: chronic
+  version: '0.10'
+  source:
+    type: git
+    name: ruby/gem_rbs_collection
+    revision: 3cdcbea7f7a2a2ba5dffce3ee71f938f8b301687
+    remote: https://github.com/ruby/gem_rbs_collection.git
+    repo_dir: gems
 - name: csv
+  version: '0'
+  source:
+    type: stdlib
+- name: date
   version: '0'
   source:
     type: stdlib
@@ -106,6 +118,14 @@ gems:
   version: '0'
   source:
     type: stdlib
+- name: kaminari-core
+  version: '1.2'
+  source:
+    type: git
+    name: ruby/gem_rbs_collection
+    revision: 3cdcbea7f7a2a2ba5dffce3ee71f938f8b301687
+    remote: https://github.com/ruby/gem_rbs_collection.git
+    repo_dir: gems
 - name: listen
   version: '3.2'
   source:
@@ -182,10 +202,26 @@ gems:
   version: 0.11.0
   source:
     type: rubygems
+- name: redis
+  version: '4.2'
+  source:
+    type: git
+    name: ruby/gem_rbs_collection
+    revision: 3cdcbea7f7a2a2ba5dffce3ee71f938f8b301687
+    remote: https://github.com/ruby/gem_rbs_collection.git
+    repo_dir: gems
 - name: securerandom
   version: '0'
   source:
     type: stdlib
+- name: sidekiq
+  version: '6.2'
+  source:
+    type: git
+    name: ruby/gem_rbs_collection
+    revision: 3cdcbea7f7a2a2ba5dffce3ee71f938f8b301687
+    remote: https://github.com/ruby/gem_rbs_collection.git
+    repo_dir: gems
 - name: strscan
   version: '0'
   source:
@@ -195,10 +231,6 @@ gems:
   source:
     type: stdlib
 - name: cgi
-  version: '0'
-  source:
-    type: stdlib
-- name: date
   version: '0'
   source:
     type: stdlib
