@@ -112,6 +112,7 @@ GEM
       romaji
     globalid (1.0.0)
       activesupport (>= 5.0)
+    htmlbeautifier (1.4.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     io-console (0.5.11)
@@ -302,6 +303,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   gimei
+  htmlbeautifier
   jbuilder
   jsbundling-rails
   pg (~> 1.1)
