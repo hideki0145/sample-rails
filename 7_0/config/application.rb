@@ -35,6 +35,9 @@ module Sampleapp
     config.generators.system_tests = nil
 
     config.generators do |g|
+      g.helper false
+      g.skip_routes true
+      g.stylesheets false
       g.test_framework(
         :rspec,
         view_specs: false,
