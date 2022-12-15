@@ -72,6 +72,8 @@ group :development do
   gem 'htmlbeautifier'
   gem 'letter_opener_web'
   gem 'rails-erd'
+  gem 'debase', '>= 0.2.5.beta2'
+  gem 'ruby-debug-ide'
 end
 
 group :test do
