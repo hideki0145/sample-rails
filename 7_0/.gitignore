@@ -29,6 +29,14 @@
 
 /node_modules
 
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
 /.gem_rbs_collection
 /coverage
 /sig/auto_completion
