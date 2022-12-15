@@ -3,9 +3,11 @@
   "dependencies": {
     "@hotwired/stimulus": "*",
     "@hotwired/turbo-rails": "*",
-    "vue": "^2"
+    "vue": "^2",
+    "vue-select": "*"
   },
   "devDependencies": {
+    "@types/vue-select": "*",
     "clean-webpack-plugin": "*",
     "glob": "*",
     "pnp-webpack-plugin": "*",

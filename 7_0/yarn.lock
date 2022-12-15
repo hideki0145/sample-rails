@@ -228,6 +228,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/vue-select@npm:*":
+  version: 3.16.2
+  resolution: "@types/vue-select@npm:3.16.2"
+  dependencies:
+    vue: ^2.0.0
+  checksum: c181f2e1c4def74a40a6e2f4f10e22ed185bf54336638e885072e3a829039f1bd366e226e5df4f83e0f8b1188ae85292325f215a5a780b1330b872839f004e8c
+  languageName: node
+  linkType: hard
+
 "@vue/compiler-sfc@npm:2.7.14":
   version: 2.7.14
   resolution: "@vue/compiler-sfc@npm:2.7.14"
@@ -2055,6 +2064,7 @@ __metadata:
   dependencies:
     "@hotwired/stimulus": "*"
     "@hotwired/turbo-rails": "*"
+    "@types/vue-select": "*"
     clean-webpack-plugin: "*"
     glob: "*"
     pnp-webpack-plugin: "*"
@@ -2063,6 +2073,7 @@ __metadata:
     typescript: "*"
     vue: ^2
     vue-loader: "*"
+    vue-select: "*"
     vue-template-compiler: "*"
     webpack: "*"
     webpack-cli: "*"
@@ -2466,6 +2477,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"vue-select@npm:*":
+  version: 3.20.0
+  resolution: "vue-select@npm:3.20.0"
+  peerDependencies:
+    vue: 2.x
+  checksum: a76787bf0475310ed34ad3575fb72b65475e43bf074fbf4c2408d79d06064b33301deef5a12bf1e842921ef24685a73928a50991e43eca3b80ed3d98bd555109
+  languageName: node
+  linkType: hard
+
 "vue-template-compiler@npm:*":
   version: 2.7.14
   resolution: "vue-template-compiler@npm:2.7.14"
@@ -2476,7 +2496,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue@npm:^2":
+"vue@npm:^2, vue@npm:^2.0.0":
   version: 2.7.14
   resolution: "vue@npm:2.7.14"
   dependencies:
