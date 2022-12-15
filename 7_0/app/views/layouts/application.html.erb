@@ -13,7 +13,7 @@
     <%= yield :javascript %>
   </head>
 
-  <body>
+  <body class="<%= controller_path.gsub('/', ' ') %>">
     <%= yield %>
   </body>
 </html>
