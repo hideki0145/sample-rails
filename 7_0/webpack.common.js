@@ -1,10 +1,11 @@
 const path = require("path");
 const webpack = require("webpack");
 const PnpWebpackPlugin = require("pnp-webpack-plugin");
+const { VueLoaderPlugin } = require("vue-loader");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const glob = require("glob");
 
-const entryExtensions = "tsx,ts,js";
+const entryExtensions = "vue,tsx,ts,js";
 
 const getEntries = (entryRoot) => {
   const entryName = (rootPath, filePath) => {
@@ -31,6 +32,14 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.vue(\.erb)?$/,
+        use: [
+          {
+            loader: "vue-loader",
+          },
+        ],
+      },
+      {
         test: /\.tsx?(\.erb)?$/,
         use: [
           {
@@ -42,6 +51,9 @@ module.exports = {
     ],
   },
   resolve: {
+    alias: {
+      vue$: "vue/dist/vue.esm.js",
+    },
     extensions: entryExtensions.split(",").map((ext) => {
       return `.${ext}`;
     }),
@@ -51,6 +63,7 @@ module.exports = {
     new webpack.optimize.LimitChunkCountPlugin({
       maxChunks: 1,
     }),
+    new VueLoaderPlugin(),
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: ["**/*", "!*.css", "!.keep"],
     }),

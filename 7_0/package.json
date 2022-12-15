@@ -2,7 +2,8 @@
   "packageManager": "yarn@3.3.0",
   "dependencies": {
     "@hotwired/stimulus": "*",
-    "@hotwired/turbo-rails": "*"
+    "@hotwired/turbo-rails": "*",
+    "vue": "^2"
   },
   "devDependencies": {
     "clean-webpack-plugin": "*",
@@ -11,6 +12,8 @@
     "sass": "*",
     "ts-loader": "*",
     "typescript": "*",
+    "vue-loader": "*",
+    "vue-template-compiler": "*",
     "webpack": "*",
     "webpack-cli": "*",
     "webpack-merge": "*"
