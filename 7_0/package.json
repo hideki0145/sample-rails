@@ -7,7 +7,10 @@
   "devDependencies": {
     "clean-webpack-plugin": "*",
     "glob": "*",
+    "pnp-webpack-plugin": "*",
     "sass": "*",
+    "ts-loader": "*",
+    "typescript": "*",
     "webpack": "*",
     "webpack-cli": "*",
     "webpack-merge": "*"

@@ -1,9 +1,10 @@
 const path = require("path");
 const webpack = require("webpack");
+const PnpWebpackPlugin = require("pnp-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const glob = require("glob");
 
-const entryExtensions = "js";
+const entryExtensions = "tsx,ts,js";
 
 const getEntries = (entryRoot) => {
   const entryName = (rootPath, filePath) => {
@@ -14,7 +15,7 @@ const getEntries = (entryRoot) => {
   };
 
   const entries = {};
-  glob.sync(`${entryRoot}/**/*.${entryExtensions}`).forEach((filePath) => {
+  glob.sync(`${entryRoot}/**/*.{${entryExtensions}}`).forEach((filePath) => {
     entries[entryName(entryRoot, filePath)] = filePath;
   });
   return entries;
@@ -26,6 +27,25 @@ module.exports = {
     filename: "[name].js",
     sourceMapFilename: "[file].map",
     path: path.resolve(__dirname, "app/assets/builds"),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?(\.erb)?$/,
+        use: [
+          {
+            loader: "ts-loader",
+            options: PnpWebpackPlugin.tsLoaderOptions(),
+          },
+        ],
+      },
+    ],
+  },
+  resolve: {
+    extensions: entryExtensions.split(",").map((ext) => {
+      return `.${ext}`;
+    }),
+    modules: [path.resolve(__dirname, "app/javascript"), "node_modules"],
   },
   plugins: [
     new webpack.optimize.LimitChunkCountPlugin({
