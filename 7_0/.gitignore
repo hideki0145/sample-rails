@@ -29,6 +29,9 @@
 
 /node_modules
 
+/.gem_rbs_collection
 /coverage
+/sig/auto_completion
+/sig/rbs_rails
 /spec/support/uploads
 erd.pdf

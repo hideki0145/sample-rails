@@ -61,6 +61,7 @@ end
 gem 'rails-i18n', '~> 7.0.0'
 
 group :development do
+  gem 'rbs_rails', require: false
   gem 'rubocop', require: false
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
