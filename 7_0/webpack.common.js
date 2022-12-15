@@ -38,4 +38,8 @@ module.exports = {
   optimization: {
     moduleIds: "deterministic",
   },
+  performance: {
+    maxAssetSize: 10485760,
+    maxEntrypointSize: 20971520,
+  },
 };
