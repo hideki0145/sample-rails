@@ -1,1 +1,3 @@
-webpack.config.js
+app/javascript/controllers/application.js
+app/javascript/controllers/index.js
+app/javascript/application.js

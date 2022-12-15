@@ -7,8 +7,14 @@
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"
   },
+  "devDependencies": {
+    "clean-webpack-plugin": "*",
+    "glob": "*",
+    "webpack-merge": "*"
+  },
   "scripts": {
-    "build": "webpack --config webpack.config.js",
+    "dev": "webpack --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
     "build:css": "sass ./app/assets/stylesheets/application.sass.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules"
   }
 }

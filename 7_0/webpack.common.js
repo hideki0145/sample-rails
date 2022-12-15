@@ -1,0 +1,41 @@
+const path = require("path");
+const webpack = require("webpack");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const glob = require("glob");
+
+const entryExtensions = "js";
+
+const getEntries = (entryRoot) => {
+  const entryName = (rootPath, filePath) => {
+    const dirName = path.dirname(filePath).replace(rootPath, "");
+    return `${dirName}${dirName ? "/" : ""}${
+      path.basename(filePath).split(".")[0]
+    }`;
+  };
+
+  const entries = {};
+  glob.sync(`${entryRoot}/**/*.${entryExtensions}`).forEach((filePath) => {
+    entries[entryName(entryRoot, filePath)] = filePath;
+  });
+  return entries;
+};
+
+module.exports = {
+  entry: getEntries(path.resolve(__dirname, "app/javascript")),
+  output: {
+    filename: "[name].js",
+    sourceMapFilename: "[file].map",
+    path: path.resolve(__dirname, "app/assets/builds"),
+  },
+  plugins: [
+    new webpack.optimize.LimitChunkCountPlugin({
+      maxChunks: 1,
+    }),
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: ["**/*", "!*.css", "!.keep"],
+    }),
+  ],
+  optimization: {
+    moduleIds: "deterministic",
+  },
+};
