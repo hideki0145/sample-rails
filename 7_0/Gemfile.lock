@@ -189,10 +189,9 @@ DEPENDENCIES
   pg (~> 1.1)
   propshaft
   puma (~> 5.0)
-  rails (~> 7.0.4)
+  rails (= 7.0.4)
   stimulus-rails
   turbo-rails
-  tzinfo-data
   web-console
 
 RUBY VERSION
