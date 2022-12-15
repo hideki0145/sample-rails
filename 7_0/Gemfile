@@ -59,3 +59,16 @@ group :development do
 end
 
 gem 'rails-i18n', '~> 7.0.0'
+
+group :test do
+  gem 'capybara'
+  gem 'webdrivers'
+  gem 'simplecov', require: false
+end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'gimei'
+end
