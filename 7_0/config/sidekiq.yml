@@ -1,0 +1,5 @@
+:verbose: false
+:concurrency: 20
+:timeout: 300
+:queues:
+  - default

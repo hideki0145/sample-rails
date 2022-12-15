@@ -59,6 +59,8 @@ group :development do
 end
 
 gem 'rails-i18n', '~> 7.0.0'
+# As of 2022/12/10, an error occurs when sidekiq is executed if 7.0.0 or higher is used.
+gem 'sidekiq', '~> 6'
 gem 'carrierwave'
 
 group :development do

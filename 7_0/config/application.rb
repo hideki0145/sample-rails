@@ -49,5 +49,7 @@ module Sampleapp
     config.time_zone = 'Asia/Tokyo'
 
     config.action_dispatch.rescue_responses['ApplicationController::Forbidden'] = :not_found
+
+    config.active_job.queue_adapter = :sidekiq
   end
 end
