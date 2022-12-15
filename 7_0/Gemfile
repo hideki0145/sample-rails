@@ -68,6 +68,7 @@ group :development do
   gem 'annotate'
   gem 'brakeman'
   gem 'htmlbeautifier'
+  gem 'letter_opener_web'
   gem 'rails-erd'
 end
 
