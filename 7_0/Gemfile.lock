@@ -195,6 +195,7 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.10-x86_64-linux)
       racc (~> 1.4)
+    oj (3.13.23)
     parallel (1.22.1)
     parser (3.1.3.0)
       ast (~> 2.4.1)
@@ -326,6 +327,8 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.4)
+    sisimai (4.25.14)
+      oj (>= 3.0.0)
     ssrf_filter (1.1.1)
     steep (1.3.0)
       activesupport (>= 5.1)
@@ -411,6 +414,7 @@ DEPENDENCIES
   ruby-debug-ide
   sidekiq (~> 6)
   simplecov
+  sisimai
   steep
   stimulus-rails
   turbo-rails
