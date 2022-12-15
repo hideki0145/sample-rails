@@ -78,6 +78,10 @@ gems:
     revision: 3cdcbea7f7a2a2ba5dffce3ee71f938f8b301687
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
+- name: csv
+  version: '0'
+  source:
+    type: stdlib
 - name: date
   version: '0'
   source:
@@ -90,6 +94,10 @@ gems:
     revision: 3cdcbea7f7a2a2ba5dffce3ee71f938f8b301687
     remote: https://github.com/ruby/gem_rbs_collection.git
     repo_dir: gems
+- name: fileutils
+  version: '0'
+  source:
+    type: stdlib
 - name: i18n
   version: '1.10'
   source:
@@ -103,6 +111,18 @@ gems:
   source:
     type: stdlib
 - name: json
+  version: '0'
+  source:
+    type: stdlib
+- name: listen
+  version: '3.2'
+  source:
+    type: git
+    name: ruby/gem_rbs_collection
+    revision: 3cdcbea7f7a2a2ba5dffce3ee71f938f8b301687
+    remote: https://github.com/ruby/gem_rbs_collection.git
+    repo_dir: gems
+- name: logger
   version: '0'
   source:
     type: stdlib
@@ -170,15 +190,19 @@ gems:
   version: 0.11.0
   source:
     type: rubygems
+- name: securerandom
+  version: '0'
+  source:
+    type: stdlib
+- name: strscan
+  version: '0'
+  source:
+    type: stdlib
 - name: timeout
   version: '0'
   source:
     type: stdlib
 - name: cgi
-  version: '0'
-  source:
-    type: stdlib
-- name: logger
   version: '0'
   source:
     type: stdlib
@@ -203,6 +227,10 @@ gems:
   source:
     type: stdlib
 - name: tempfile
+  version: '0'
+  source:
+    type: stdlib
+- name: forwardable
   version: '0'
   source:
     type: stdlib
