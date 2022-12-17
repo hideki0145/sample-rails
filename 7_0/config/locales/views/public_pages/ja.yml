@@ -1,0 +1,17 @@
+ja:
+  public_pages:
+    link_to_top: 'TOPページへ戻る'
+    back_previous_page: '一つ前のページへ戻る'
+    404:
+      title: '404 Not Found'
+      description1: 'ページが見つかりません'
+      description2: 'このデータは移動 又は 削除された可能性があります'
+    422:
+      title: '422 Unprocessable Entity'
+      description: 'このページは表示できません'
+    500:
+      title: '500 Internal Server Error'
+      description: '一時的なエラーが発生しました'
+    503:
+      title: '503 Service Unavailable'
+      description: 'ただいまアクセスしづらくなっております'

@@ -66,6 +66,7 @@ gem 'sidekiq', '~> 6'
 gem 'ransack'
 gem 'sisimai'
 gem 'carrierwave'
+gem 'hanmoto'
 gem 'whenever', require: false
 
 group :development do
