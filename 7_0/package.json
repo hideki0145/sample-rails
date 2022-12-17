@@ -3,6 +3,7 @@
   "dependencies": {
     "@hotwired/stimulus": "*",
     "@hotwired/turbo-rails": "*",
+    "i18n-js": "*",
     "vue": "^2",
     "vue-select": "*"
   },
@@ -11,6 +12,7 @@
     "clean-webpack-plugin": "*",
     "glob": "*",
     "pnp-webpack-plugin": "*",
+    "rails-erb-loader": "*",
     "sass": "*",
     "ts-loader": "*",
     "typescript": "*",

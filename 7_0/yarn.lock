@@ -595,6 +595,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bignumber.js@npm:*":
+  version: 9.1.1
+  resolution: "bignumber.js@npm:9.1.1"
+  checksum: ad243b7e2f9120b112d670bb3d674128f0bd2ca1745b0a6c9df0433bd2c0252c43e6315d944c2ac07b4c639e7496b425e46842773cf89c6a2dcd4f31e5c4b11e
+  languageName: node
+  linkType: hard
+
 "binary-extensions@npm:^2.0.0":
   version: 2.2.0
   resolution: "binary-extensions@npm:2.2.0"
@@ -1236,6 +1243,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"i18n-js@npm:*":
+  version: 4.2.1
+  resolution: "i18n-js@npm:4.2.1"
+  dependencies:
+    bignumber.js: "*"
+    lodash: "*"
+  checksum: 5c19aff5c7d187ae6cc25f5e3b5ed926634862e22abb53ce890e4350980e43b1dc539e64f5911a966de4a49474a94dcac3e40d8a18b46167091239743dc1ecee
+  languageName: node
+  linkType: hard
+
 "iconv-lite@npm:^0.6.2":
   version: 0.6.3
   resolution: "iconv-lite@npm:0.6.3"
@@ -1444,6 +1461,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"json5@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "json5@npm:1.0.1"
+  dependencies:
+    minimist: ^1.2.0
+  bin:
+    json5: lib/cli.js
+  checksum: e76ea23dbb8fc1348c143da628134a98adf4c5a4e8ea2adaa74a80c455fc2cdf0e2e13e6398ef819bfe92306b610ebb2002668ed9fc1af386d593691ef346fc3
+  languageName: node
+  linkType: hard
+
 "json5@npm:^2.1.2":
   version: 2.2.1
   resolution: "json5@npm:2.2.1"
@@ -1467,6 +1495,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"loader-utils@npm:^1.1.0":
+  version: 1.4.2
+  resolution: "loader-utils@npm:1.4.2"
+  dependencies:
+    big.js: ^5.2.2
+    emojis-list: ^3.0.0
+    json5: ^1.0.1
+  checksum: eb6fb622efc0ffd1abdf68a2022f9eac62bef8ec599cf8adb75e94d1d338381780be6278534170e99edc03380a6d29bc7eb1563c89ce17c5fed3a0b17f1ad804
+  languageName: node
+  linkType: hard
+
 "loader-utils@npm:^2.0.0":
   version: 2.0.4
   resolution: "loader-utils@npm:2.0.4"
@@ -1484,6 +1523,20 @@ __metadata:
   dependencies:
     p-locate: ^4.1.0
   checksum: 83e51725e67517287d73e1ded92b28602e3ae5580b301fe54bfb76c0c723e3f285b19252e375712316774cf52006cb236aed5704692c32db0d5d089b69696e30
+  languageName: node
+  linkType: hard
+
+"lodash.defaults@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "lodash.defaults@npm:4.2.0"
+  checksum: 84923258235592c8886e29de5491946ff8c2ae5c82a7ac5cddd2e3cb697e6fbdfbbb6efcca015795c86eec2bb953a5a2ee4016e3735a3f02720428a40efbb8f1
+  languageName: node
+  linkType: hard
+
+"lodash@npm:*":
+  version: 4.17.21
+  resolution: "lodash@npm:4.17.21"
+  checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
   languageName: node
   linkType: hard
 
@@ -1575,6 +1628,13 @@ __metadata:
   dependencies:
     brace-expansion: ^2.0.1
   checksum: 215edd0978320a3354188f84a537d45841f2449af4df4379f79b9b777e71aa4f5722cc9d1717eabd2a70d38ef76ab7b708d24d83ea6a6c909dfd8833de98b437
+  languageName: node
+  linkType: hard
+
+"minimist@npm:^1.2.0":
+  version: 1.2.7
+  resolution: "minimist@npm:1.2.7"
+  checksum: 7346574a1038ca23c32e02252f603801f09384dd1d78b69a943a4e8c2c28730b80e96193882d3d3b22a063445f460e48316b29b8a25addca2d7e5e8f75478bec
   languageName: node
   linkType: hard
 
@@ -1949,6 +2009,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rails-erb-loader@npm:*":
+  version: 5.5.2
+  resolution: "rails-erb-loader@npm:5.5.2"
+  dependencies:
+    loader-utils: ^1.1.0
+    lodash.defaults: ^4.2.0
+  peerDependencies:
+    webpack: ^2.0.0 || >= 3.0.0-rc.0 || ^3.0.0
+  checksum: f89ac4f14b1587047d2ba9fc1b10f2c7f62b1fe19994bce977739fd5042ac2bdfb3c02ddc671da8988c3b60de7fc3aba45f0f3e4f7f42dbf9b0991d59be0a83c
+  languageName: node
+  linkType: hard
+
 "randombytes@npm:^2.1.0":
   version: 2.1.0
   resolution: "randombytes@npm:2.1.0"
@@ -2067,7 +2139,9 @@ __metadata:
     "@types/vue-select": "*"
     clean-webpack-plugin: "*"
     glob: "*"
+    i18n-js: "*"
     pnp-webpack-plugin: "*"
+    rails-erb-loader: "*"
     sass: "*"
     ts-loader: "*"
     typescript: "*"

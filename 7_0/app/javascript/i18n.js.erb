@@ -1,0 +1,6 @@
+import { I18n } from "i18n-js";
+const i18n = new I18n(<%= I18nJS.translations.to_json %>);
+i18n.defaultLocale = "<%= I18n.default_locale %>";
+i18n.locale = "<%= I18n.locale %>";
+
+window.I18n = i18n;

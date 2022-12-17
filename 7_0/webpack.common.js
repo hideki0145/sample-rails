@@ -5,7 +5,7 @@ const { VueLoaderPlugin } = require("vue-loader");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const glob = require("glob");
 
-const entryExtensions = "vue,tsx,ts,js";
+const entryExtensions = "erb,vue,tsx,ts,js";
 
 const getEntries = (entryRoot) => {
   const entryName = (rootPath, filePath) => {
@@ -45,6 +45,16 @@ module.exports = {
           {
             loader: "ts-loader",
             options: PnpWebpackPlugin.tsLoaderOptions(),
+          },
+        ],
+      },
+      {
+        test: /\.erb$/,
+        enforce: "pre",
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "rails-erb-loader",
           },
         ],
       },
