@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const PnpWebpackPlugin = require("pnp-webpack-plugin");
+const { DefinePlugin } = require("webpack");
 const { VueLoaderPlugin } = require("vue-loader");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const glob = require("glob");
@@ -62,7 +63,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      vue$: "vue/dist/vue.esm.js",
+      vue$: "vue/dist/vue.esm-bundler.js",
     },
     extensions: entryExtensions.split(",").map((ext) => {
       return `.${ext}`;
@@ -72,6 +73,10 @@ module.exports = {
   plugins: [
     new webpack.optimize.LimitChunkCountPlugin({
       maxChunks: 1,
+    }),
+    new DefinePlugin({
+      __VUE_OPTIONS_API__: true,
+      __VUE_PROD_DEVTOOLS__: false,
     }),
     new VueLoaderPlugin(),
     new CleanWebpackPlugin({
