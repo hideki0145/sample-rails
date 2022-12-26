@@ -4,6 +4,7 @@
     "@hotwired/stimulus": "*",
     "@hotwired/turbo-rails": "*",
     "i18n-js": "*",
+    "mrujs": "*",
     "vue": "*",
     "vue-select": "beta"
   },

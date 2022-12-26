@@ -1845,6 +1845,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"morphdom@npm:>=2.6.0 <3.0.0":
+  version: 2.6.1
+  resolution: "morphdom@npm:2.6.1"
+  checksum: 8930281b27df2c918a168872a650931d92ac728b9177ed6d74779acf40a4bf6a1c62482a267496a1007f9658d0c6a4125e7080ec1194c6b937ff55f903235ad0
+  languageName: node
+  linkType: hard
+
+"mrujs@npm:*":
+  version: 0.10.1
+  resolution: "mrujs@npm:0.10.1"
+  dependencies:
+    morphdom: ">=2.6.0 <3.0.0"
+  checksum: b4561fde2b596399e5b928c100ec29ff768235dfaf94692efe1fc27fb09542c10c9d0f026c382b5d497ca51588b6cb970fe785018f3d8fdd195a45295565cfe1
+  languageName: node
+  linkType: hard
+
 "ms@npm:2.1.2":
   version: 2.1.2
   resolution: "ms@npm:2.1.2"
@@ -2259,6 +2275,7 @@ __metadata:
     clean-webpack-plugin: "*"
     glob: "*"
     i18n-js: "*"
+    mrujs: "*"
     pnp-webpack-plugin: "*"
     rails-erb-loader: "*"
     sass: "*"
